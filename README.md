@@ -79,12 +79,19 @@ instructions to help you set up the linux subsystem on windows 10
     
 1. Move the 3 nvm lines from the bottom of `.bashrc` to the bottom of `.zshrc`
     - This is the trickest step. Run this command to open your .bashrc config file: `code ~/.bashrc`
-    - Scroll down to the bottom of the file and cut the three lines at the bottom that reference nvm.
+    - Scroll down to the bottom of the file and cut the three lines at the bottom that look like this: 
+
+    ```j
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    ```
+
     - Run this command to open your .zshrc file: `code ~/.zshrc`
     - Paste the nvm lines you cut from the .bashrc file down at the bottom of the .zshrc file.
 
 1. Change the oh-my-zsh theme to 'bira'
-    - Scroll to the top of the .zshrc file and replace the default theme string with 'bira'
+    - Scroll to the top of the .zshrc file and replace the ZSH_THEME= value with 'bira'
     
 1. Install the latest version of nvm 
     - Run this command in your terminal:`nvm install --lts`
