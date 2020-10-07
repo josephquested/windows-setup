@@ -51,30 +51,47 @@ instructions to help you set up the linux subsystem on windows 10
   ```
 
 1. Restart the Windows Terminal and install zsh and make it the default shell
-    - `sudo apt-get install zsh`
-    - `chsh -s $(which zsh)`
+    - Put this command into your terminal: `sudo apt-get install zsh`
+    - Then this command: `chsh -s $(which zsh)`
     - Restart the Windows Terminal
+    
 1. Install oh-my-zsh from inside the Windows Terminal
-    - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-    - Restart the terminal and open an Ubuntu tab
+    - Enter this command into your terminal: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+    - Restart the terminal and open an Ubuntu tab with the little plus button in the top left corner. 
+    
 1. Install VS Code if it isn't already installed
+    - https://code.visualstudio.com/download
+    
 1. In your Ubuntu terminal, open VS Code with `code .`
+
 1. Install the following VS Code extensions
-    - ESLint
     - WSL - Remote
     - Live Share (online students only)
-    - vs-code-icons (optional)
-    - GitLens (optional)
+    
 1. Restart your terminal
+
 1. Open VS Code again with `code .`
     - This should begin downloading the VS Code Server
     - When prompted for access, accept it
+    
 1. Install nvm
-    - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
+    - Enter this command into your terminal: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
+    
 1. Move the 3 nvm lines from the bottom of `.bashrc` to the bottom of `.zshrc`
+    - This is the trickest step. Run this command to open your .bashrc config file: `code ~/.bashrc`
+    - Scroll down to the bottom of the file and cut the three lines at the bottom that reference nvm.
+    - Run this command to open your .zshrc file: `code ~/.zshrc`
+    - Paste the nvm lines you cut from the .bashrc file down at the bottom of the .zshrc file.
+
 1. Change the oh-my-zsh theme to 'bira'
-1. `nvm install --lts`
+    - Scroll to the top of the .zshrc file and replace the default theme string with 'bira'
+    
+1. Install the latest version of nvm 
+    - Run this command in your terminal:`nvm install --lts`
+    
 1. In your Windows Terminal install some global npm packages
+ - Just copy/paste in this entire chunk of code:
+ 
     ```sh
     npm install -g \
     eslint@5.16.0 \
@@ -86,47 +103,6 @@ instructions to help you set up the linux subsystem on windows 10
     eslint-plugin-react@7.13.0 \
     eslint-plugin-standard@4.0.0
     ```
-1. Add a global ESLint config file to your home folder
-    - Run `code .` in your Ubuntu terminal
-    - Paste in these contents
-    ```js
-    {
-      "parser": "babel-eslint",
-      "env": {
-        "browser": true,
-        "node": true,
-        "jest": true
-      },
-      "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "standard"
-      ],
-      "plugins": [
-        "standard",
-        "promise"
-      ],
-      "rules": {
-        "eol-last": ["error", "always"],
-        "no-multiple-empty-lines": [
-          "error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }
-        ],
-        "object-curly-spacing": [2, "always"],
-        "react/prop-types": "off"
-      },
-      "settings": {
-        "react": { "version": "detect" }
-      }
-    }
-    ```
-    - Save the file as `.eslintrc.json` in your home folder.
-1. Add a shortcut key to auto-format JavaScript
-    ```js
-    [
-      {
-        "key": "shift+alt+b",
-        "command": "eslint.executeAutofix",
-        "when": "editorFocus"
-      }
-    ]
-    ```
+    
+    You are done!
+    
