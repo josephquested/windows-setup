@@ -1,6 +1,9 @@
 # windows-setup
 instructions to help you set up the linux subsystem on windows 10
 
+VIDEO WALKTHOUGH:
+https://youtu.be/pwn4zknR5TU
+
 1. Install the Windows Subsystem for Linux
     - Control Panel -> Programs -> Turn Windows Features on or off
     - Select Windows Subsystem for Linux -> OK
