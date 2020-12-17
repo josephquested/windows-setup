@@ -43,7 +43,7 @@ https://youtu.be/pwn4zknR5TU
 
     Once you have pasted it in, your Linux section should look like this (but instead of josep, it would say YOUR username. you are not josep.):
 
-  ```js
+    ```js
             {
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
@@ -52,7 +52,7 @@ https://youtu.be/pwn4zknR5TU
                 "colorScheme": "One Half Dark",
                 "startingDirectory": "//wsl$/Ubuntu-20.04/home/josep"
             },
-  ```
+    ```
 
 1. Restart the Windows Terminal and install zsh and make it the default shell
     - Put this command into your terminal: `sudo apt-get install zsh`
