@@ -1,5 +1,5 @@
 # windows-setup
-instructions to help you set up the linux subsystem on windows 10
+Instructions to help you set up the Linux subsystem on Windows 10
 
 VIDEO WALKTHOUGH:
 https://youtu.be/pwn4zknR5TU
@@ -12,7 +12,8 @@ https://youtu.be/pwn4zknR5TU
 1. Install Ubuntu 20 and the Windows Terminal from the Windows Store
     - If you can't install from the Windows Store, make sure you're signing in with your Microsoft Account and have verified your device (Settings -> Accounts)
     - Also, make sure you're using the most recent version of Windows 10. On the Windows Terminal page in the Store, select System Requirements -> Update
-    - Open Ubuntu and let it finish installation. If it says installing for more than 5 minutes, close the Ubuntu window and re-open it
+    - Open Ubuntu and let it finish installation. When prompted, enter a username (e.g. your first name) and a password. This is the username that Linux will run as by default. For Full Name, Room Number, etc. you can hit Enter to leave them blank
+    - If it says installing for more than 5 minutes, close the Ubuntu window and re-open it
 
 1. Configure your Windows Terminal
     - Open your Windows Terminal application and select the dropdown next to the new tab button then select Settings
@@ -57,10 +58,12 @@ https://youtu.be/pwn4zknR5TU
     - Put this command into your terminal: `sudo apt-get install zsh`
     - Then this command: `chsh -s $(which zsh)`
     - Restart the Windows Terminal
+    - If you get a page full of info about "This is the Z Shell configuration for new users...", press q (Quit and do nothing)
     
 1. Install oh-my-zsh from inside the Windows Terminal
-    - Enter this command into your terminal: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-    - Restart the terminal and open an Ubuntu tab with the little plus button in the top left corner. 
+    - Enter this command into your terminal (note that it's one long line, even if it displays as two lines on the page where you're reading this): `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+    - Restart the terminal and open an Ubuntu tab with the little plus button in the top left corner
+    - If the prompt in your terminal window is now a little arrow and a tilde (~), instead of "yourname@...", that's OK (you'll change it again in a later step)
     
 1. Install VS Code if it isn't already installed
     - https://code.visualstudio.com/download
@@ -68,14 +71,14 @@ https://youtu.be/pwn4zknR5TU
 1. In your Ubuntu terminal, open VS Code with `code .`
 
 1. Install the following VS Code extensions
-    - WSL - Remote
+    - Remote - WSL
     - Live Share (online students only)
     
 1. Restart your terminal
 
 1. Open VS Code again with `code .`
     - This should begin downloading the VS Code Server
-    - When prompted for access, accept it
+    - When prompted for access (by Windows Defender Firewall), click "Allow access"
     
 1. Install nvm
     - Enter this command into your terminal: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
@@ -100,7 +103,7 @@ https://youtu.be/pwn4zknR5TU
     - Run this command in your terminal:`nvm install --lts`
     
 1. In your Windows Terminal install some global npm packages
- - Just copy/paste in this entire chunk of code:
+ - Just copy/paste in this entire chunk of code (if you get a warning about multiple lines of text, click "Paste anyway"):
  
     ```sh
     npm install -g \
