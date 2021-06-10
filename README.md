@@ -1,6 +1,8 @@
 # windows-setup
 Instructions to help you set up the Linux subsystem on Windows 10
 
+*** THIS VERSION IS OUT OF DATE - PLEASE USE https://github.com/dev-academy-programme/computer-setup/blob/main/windows-10-setup.md INSTEAD ***
+
 VIDEO WALKTHOUGH:
 https://youtu.be/pwn4zknR5TU
 
